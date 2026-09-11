@@ -1,0 +1,12 @@
+const { Button, Card, Badge, DataTable, Switch, Dialog, Field, Input, Tag } = window.RinasRentDesignSystem_a23b91;
+function Subjects({ toast }) {
+  const [rows, setRows] = React.useState(window.RR_DATA.subjects); const [open, setOpen] = React.useState(false);
+  return <>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}><p style={{ margin: 0, color: 'var(--text-muted)', fontSize: 'var(--text-sm)', maxWidth: 560 }}>Çdo subjekt ka llogarinë e vet dhe sheh vetëm makinat, prenotimet dhe kontratat e tij. Llogaritë hapen vetëm nga administratori.</p><Button icon="plus" style={{ marginLeft: 'auto' }} onClick={() => setOpen(true)}>Subjekt i ri</Button></div>
+    <Card padding={0}><DataTable rows={rows} columns={[{ key: 'name', label: 'Subjekti', render: r => <div><div style={{ fontWeight: 600 }}>{r.name}</div><div style={{ color: 'var(--text-subtle)', fontSize: 12, fontFamily: 'var(--font-mono)' }}>NIPT {r.nipt}</div></div> }, { key: 'user', label: 'Përdoruesi', mono: true }, { key: 'cars', label: 'Makina', align: 'right', mono: true }, { key: 'contracts', label: 'Kontrata', align: 'right', mono: true }, { key: 'active', label: 'Llogaria', render: r => <Switch checked={r.active} label={<span style={{ fontSize: 13, color: 'var(--text-muted)' }}>{r.active ? 'Aktive' : 'Pezulluar'}</span>} onChange={v => setRows(rows.map(x => x.id === r.id ? { ...x, active: v } : x))} /> }, { key: 'a', label: '', align: 'right', render: () => <Button size="sm" variant="ghost" icon="key-round">Rivendos fjalëkalimin</Button> }]} /></Card>
+    <Dialog open={open} title="Hap llogari për subjekt" onClose={() => setOpen(false)} footer={<><Button variant="secondary" onClick={() => setOpen(false)}>Anulo</Button><Button icon="check" onClick={() => { setOpen(false); toast({ tone: 'success', title: 'Llogaria u krijua', message: 'Kredencialet u dërguan me email.' }); }}>Krijo llogarinë</Button></>}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}><Field label="Emri i subjektit" required style={{ gridColumn: '1 / -1' }}><Input placeholder="Emri sh.p.k." /></Field><Field label="NIPT" required><Input mono placeholder="L81234567A" /></Field><Field label="Përdoruesi" required><Input mono placeholder="emri" /></Field><Field label="Email"><Input icon="mail" placeholder="info@subjekt.al" /></Field><Field label="Telefon"><Input icon="phone" placeholder="+355 4 000 0000" /></Field></div>
+    </Dialog>
+  </>;
+}
+Object.assign(window, { Subjects });
