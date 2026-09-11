@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Core" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:16px;background:#fff}.g{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Badge, Tag, Card, Icon, Field, Input, Select, Checkbox, Radio, Switch, Tabs, SidebarNav, Topbar, Dialog, Toast, Tooltip, EmptyState, DataTable, StatCard, CalendarGrid } = window.RinasRentDesignSystem_a23b91;
+function App(){ return <div className="col">
+<div className="g"><Button icon="plus">Prenotim i ri</Button><Button variant="secondary">Anulo</Button><Button variant="ghost" icon="printer">Printo</Button><Button variant="danger" icon="trash-2">Fshi</Button><Button variant="accent" icon="calendar-plus">Rezervo</Button><Button disabled>Ruaj</Button></div>
+<div className="g"><Button size="sm">Small</Button><Button size="md">Medium</Button><Button size="lg" iconRight="arrow-right">Large</Button><IconButton icon="pencil" label="Ndrysho" /><IconButton icon="printer" label="Printo" variant="outline" /><IconButton icon="bell" label="Njoftime" active /><span style={{background:'var(--navy-900)',padding:4,borderRadius:4,display:'inline-flex'}}><IconButton icon="search" label="Kërko" variant="dark" /></span></div>
+<div className="g"><Badge tone="success" status="active">Aktive</Badge><Badge tone="warning" status="reserved">Rezervuar</Badge><Badge tone="danger" status="overdue">Vonesë</Badge><Badge status="done">Mbyllur</Badge><Badge tone="primary">Kontratë</Badge><Badge tone="info">Këst 2/3</Badge><Tag selected>SUV</Tag><Tag>Ekonomike</Tag><Tag onRemove={()=>{}}>Tetor 2026</Tag></div>
+<div className="g"><Icon name="car"/><Icon name="calendar-days"/><Icon name="file-text"/><Icon name="credit-card"/><Icon name="users"/><Icon name="building-2"/><Icon name="printer"/><Icon name="key-round"/><Icon name="alert-triangle" color="var(--color-danger)"/></div>
+<Card title="Kontrata KTR-2026-0148" subtitle="Toyota Yaris · AA 123 BB" actions={<Button size="sm" variant="secondary" icon="printer">Printo</Button>} style={{width:'100%'}}><span style={{color:'var(--text-muted)',fontSize:13}}>Përmbajtja e kartës.</span></Card>
+</div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

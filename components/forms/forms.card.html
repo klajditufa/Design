@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Forms" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:16px;background:#fff}.g{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Badge, Tag, Card, Icon, Field, Input, Select, Checkbox, Radio, Switch, Tabs, SidebarNav, Topbar, Dialog, Toast, Tooltip, EmptyState, DataTable, StatCard, CalendarGrid } = window.RinasRentDesignSystem_a23b91;
+function App(){ return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+<Field label="Klienti" required><Input icon="user" placeholder="Emër Mbiemër" /></Field>
+<Field label="Targa" hint="Formati AA 123 BB"><Input mono defaultValue="AA 123 BB" /></Field>
+<Field label="Makina"><Select placeholder="Zgjidh makinën" options={['Toyota Yaris · AA 123 BB','VW Golf · AB 456 CD']} /></Field>
+<Field label="Çmimi ditor" error="Vlera duhet të jetë > 0"><Input mono suffix="ALL" defaultValue="0" error /></Field>
+<Field label="Plani i pagesës"><Radio inline defaultValue="3" options={[{value:'1',label:'E plotë'},{value:'2',label:'2 këste'},{value:'3',label:'3 këste',hint:'çdo 30 ditë'}]} /></Field>
+<div className="col" style={{gap:10}}><Checkbox label="Sigurim i plotë (CDW)" defaultChecked /><Checkbox label="Shofer i dytë" /><Switch label="Llogari aktive" defaultChecked /><Input disabled placeholder="I çaktivizuar" /></div>
+</div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

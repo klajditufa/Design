@@ -1,0 +1,17 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Data" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:16px;background:#fff}.g{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Badge, Tag, Card, Icon, Field, Input, Select, Checkbox, Radio, Switch, Tabs, SidebarNav, Topbar, Dialog, Toast, Tooltip, EmptyState, DataTable, StatCard, CalendarGrid } = window.RinasRentDesignSystem_a23b91;
+function App(){ const rows=[{id:1,nr:'KTR-0148',client:'Arben Hoxha',car:'Toyota Yaris',amount:'36.000',st:'active',stLabel:'Aktive'},{id:2,nr:'KTR-0147',client:'Elda Meta',car:'VW Golf',amount:'54.000',st:'reserved',stLabel:'Rezervuar'},{id:3,nr:'KTR-0141',client:'Gent Krasniqi',car:'Dacia Duster',amount:'21.000',st:'overdue',stLabel:'Vonesë'}];
+return <div className="col">
+<div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}><StatCard label="Makina jashtë sot" value="14 / 22" icon="car" /><StatCard label="Të ardhura · Shtator" value="1.284.000" delta="+12% nga gushti" deltaTone="up" icon="banknote" /><StatCard label="Këste në vonesë" value="3" delta="2 subjekte" deltaTone="down" icon="alert-triangle" /></div>
+<DataTable columns={[{key:'nr',label:'Nr.',mono:true},{key:'client',label:'Klienti'},{key:'car',label:'Makina'},{key:'amount',label:'Shuma (ALL)',align:'right',mono:true},{key:'st',label:'Statusi',render:r=><Badge tone={r.st==='active'?'success':r.st==='reserved'?'warning':'danger'} status={r.st}>{r.stLabel}</Badge>}]} rows={rows} dense />
+<CalendarGrid year={2026} month={9} today={11} events={[{id:1,label:'Yaris · A. Hoxha',from:10,to:14,status:'active'},{id:2,label:'Golf · E. Meta',from:12,to:18,status:'reserved'},{id:3,label:'Duster · G. Krasniqi',from:3,to:9,status:'overdue'}]} style={{display:'none'}} />
+</div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

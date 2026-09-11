@@ -1,0 +1,14 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Navigation" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:16px;background:#fff}.g{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Badge, Tag, Card, Icon, Field, Input, Select, Checkbox, Radio, Switch, Tabs, SidebarNav, Topbar, Dialog, Toast, Tooltip, EmptyState, DataTable, StatCard, CalendarGrid } = window.RinasRentDesignSystem_a23b91;
+function App(){ const [v,setV]=React.useState('cal');return <div style={{display:'flex',height:308,border:'1px solid var(--border-default)',borderRadius:6,overflow:'hidden'}}>
+<SidebarNav brand={<span>Rinas<span style={{color:'var(--amber-400)'}}>Rent</span></span>} value={v} onChange={setV} items={[{section:'Operacione'},{value:'dash',label:'Paneli',icon:'layout-dashboard'},{value:'cal',label:'Kalendari',icon:'calendar-days'},{value:'ktr',label:'Kontratat',icon:'file-text',count:2},{value:'pag',label:'Pagesat',icon:'credit-card'},{section:'Administrim'},{value:'sub',label:'Subjektet',icon:'building-2'}]} />
+<div style={{flex:1,minWidth:0,display:'flex',flexDirection:'column'}}><Topbar breadcrumb="Kontratat" title="KTR-2026-0148" actions={<><Button size="sm" variant="secondary" icon="printer">Printo</Button><Button size="sm" icon="save">Ruaj</Button></>} /><div style={{padding:'0 20px'}}><Tabs items={[{value:'k',label:'Kontrata',icon:'file-text'},{value:'p',label:'Pagesat',icon:'credit-card',count:3},{value:'d',label:'Dokumente'}]} /></div></div></div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>
