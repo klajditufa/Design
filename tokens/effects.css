@@ -1,0 +1,10 @@
+:root{
+--shadow-xs:0 1px 2px oklch(18% 0.02 250 / 0.06);
+--shadow-sm:0 1px 3px oklch(18% 0.02 250 / 0.08),0 1px 2px oklch(18% 0.02 250 / 0.04);
+--shadow-md:0 4px 12px oklch(18% 0.02 250 / 0.10),0 1px 3px oklch(18% 0.02 250 / 0.06);
+--shadow-lg:0 12px 32px oklch(18% 0.02 250 / 0.16),0 2px 6px oklch(18% 0.02 250 / 0.08);
+--ring-focus:0 0 0 3px oklch(46% 0.1 260 / 0.28);
+--ease-out:cubic-bezier(0.2,0,0,1);/* @kind other */
+--dur-fast:120ms;/* @kind other */
+--dur-base:180ms;/* @kind other */
+}
